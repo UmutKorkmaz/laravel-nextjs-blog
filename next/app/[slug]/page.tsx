@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PostLayout from "@/components/PostLayout";
 
-const allPosts = [
+const allPosts: Post[] = [
   {
     id: "1",
     title: "Post 1",
@@ -10,20 +10,19 @@ const allPosts = [
     likes: 24,
     date: "10.11.2023 11:43",
     description: "This is post 1",
-    body:
-      "<h1>This is post 1</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
+    body: "<h1>This is post 1</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
     comments: [
       {
         id: "1",
         user: "user1",
         date: "10.11.2023 11:43",
-        content: "This is comment 1",
+        message: "This is comment 1",
       },
       {
         id: "2",
         user: "user2",
         date: "10.11.2023 11:43",
-        content: "This is comment 2",
+        message: "This is comment 2",
       },
     ],
   },
@@ -34,20 +33,19 @@ const allPosts = [
     likes: -4,
     date: "10.11.2023 17:22",
     description: "This is post 2",
-    body:
-      "<h1>This is post 2</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
+    body: "<h1>This is post 2</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
     comments: [
       {
         id: "3",
         user: "user3",
         date: "10.11.2023 11:43",
-        content: "This is comment 3",
+        message: "This is comment 3",
       },
       {
         id: "4",
         user: "user4",
         date: "10.11.2023 11:43",
-        content: "This is comment 4",
+        message: "This is comment 4",
       },
     ],
   },
@@ -99,9 +97,7 @@ const PostList = ({ params }: { params: { slug: string } }) => {
     notFound();
   }
 
-  return (
-    <PostLayout post={post}/>
-  );
+  return <PostLayout post={post} />;
 };
 
 export default PostList;

@@ -37,7 +37,7 @@ const PostLayout = ({ post }: { post: Post }) => {
               >
                 {comment.date}
               </time>
-              <p>{comment.content}</p>
+              <p>{comment.message}</p>
             </div>
           ))
         ) : (

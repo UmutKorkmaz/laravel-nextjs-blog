@@ -3,7 +3,7 @@ type Post = {
     title: string
     date?: string
     description: string
-    body?: HTMLElement
+    body?: HTMLElement | string
     slug: string,
     likes?: number,
     comments?: Comments[],
