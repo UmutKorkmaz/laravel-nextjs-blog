@@ -7,4 +7,5 @@ type Post = {
     slug: string,
     likes?: number,
     comments?: Comments[],
+    user: User,
 }

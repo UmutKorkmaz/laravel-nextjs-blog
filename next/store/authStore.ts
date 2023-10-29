@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import axios from "axios";
+import api from "@/lib/api";
 
 type AuthState = {
   loginInfo: Record<string, any> | LoginResponse;
@@ -27,8 +27,8 @@ const useAuthStore = create<AuthState>()(
           const formData = new FormData();
           formData.append("username", params.email);
           formData.append("password", params.password);
-          const response = await axios
-            .post<LoginResponse>("/api/token", formData)
+          const response = await api
+            .post<LoginResponse>("/login", formData)
             .catch((error) => {
               return error;
             });
@@ -36,7 +36,7 @@ const useAuthStore = create<AuthState>()(
           return response;
         },
         register: async (params) => {
-          return await axios.post("/api/1.0/register", {
+          return await api.post("/register", {
             username: params.email,
             email: params.email,
             password: params.password,

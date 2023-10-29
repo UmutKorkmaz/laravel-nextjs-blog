@@ -10,6 +10,11 @@ const allPosts: Post[] = [
     likes: 24,
     date: "10.11.2023 11:43",
     description: "This is post 1",
+    user: {
+        id: 1,
+        name: "Umut Korkmaz",
+        email: "info@umutkorkmaz.net"
+    },
     body: "<h1>This is post 1</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
     comments: [
       {
@@ -33,6 +38,11 @@ const allPosts: Post[] = [
     likes: -4,
     date: "10.11.2023 17:22",
     description: "This is post 2",
+    user: {
+      id: 2,
+      name: "Ufuk Korkmaz",
+      email: "info@ufukkorkmaz.com"
+    },
     body: "<h1>This is post 2</h1><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, quis aliquam</p>",
     comments: [
       {
